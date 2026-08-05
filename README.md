@@ -37,11 +37,15 @@ Computational Geometry 2025, SWAT 2026, ISAAC 2025, FSTTCS 2022 논문의 Figure
 | 토큰 | 용도 |
 | --- | --- |
 | `--paper`, `--surface` | 종이색 배경과 figure 패널 |
-| `--ink` | 다각형 경계와 본문 |
+| `--ink`, `--ink-soft`, `--muted` | 본문 위계 (셋 다 명도 대비 4.5:1 이상) |
 | `--teal` | feasible region과 주요 링크 |
 | `--blue` | 보조 조각과 방향 정보 |
 | `--coral` | cut과 contact point |
 | `--ochre` | 선택된 해와 길이 표기 |
+
+강조색은 `--teal`처럼 선·작은 글씨에 쓰는 값과 `--teal-soft`처럼 면·그림자에 쓰는 값이 짝을 이룹니다. 요소에 `accent-teal`, `accent-blue`, `accent-coral`, `accent-ochre` 중 하나를 붙이면 그 짝이 `--accent`, `--accent-soft`로 전달되므로, research card와 paper figure가 같은 방식으로 색을 받습니다.
+
+`--band-*`, `--header-bg`, `--figure-bg`처럼 반투명하게 겹치는 배경은 `color-mix()`로 위 팔레트에서 파생시킵니다. 팔레트 값만 바꾸면 배경 띠도 같이 따라옵니다.
 
 자동 dark mode는 사용하지 않습니다. 사진도 흑백 필터 없이 원본 색상을 사용합니다.
 
@@ -61,9 +65,11 @@ Computational Geometry 2025, SWAT 2026, ISAAC 2025, FSTTCS 2022 논문의 Figure
 - 논문 정보와 링크: `index.html`의 `#publications`
 - 대표 논문과 Figure: `index.html`의 `#work`, `assets/papers/`
 - 향후 일정: `index.html`의 `#upcoming`
-- 색상과 크기: `styles.css` 상단의 `:root`
+- 색상·글자 크기·여백: `styles.css` 상단의 `:root` 토큰
 - 프로필 사진 크롭: `styles.css`의 `.hero-photo img`
 - CV 교체: 새 PDF를 `cv_15.pdf`라는 이름으로 덮어쓰기
+
+논문을 추가할 때는 기존 `article.featured-paper` 블록을 복사한 뒤 `accent-*` 클래스만 바꾸면 됩니다. 구분선과 번호는 CSS가 형제 선택자와 counter로 처리하므로 첫 항목을 따로 손볼 필요가 없습니다.
 
 ## GitHub Pages 배포
 

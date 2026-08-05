@@ -1,3 +1,7 @@
+// Mirrors the `max-width: 860px` breakpoint in styles.css, where the nav
+// collapses into the toggle-driven panel.
+const compactNav = window.matchMedia('(max-width: 860px)');
+
 const header = document.querySelector('[data-header]');
 const menuToggle = document.querySelector('[data-menu-toggle]');
 const navigation = document.querySelector('[data-navigation]');
@@ -32,8 +36,8 @@ if (menuToggle && navigation) {
     if (event.key === 'Escape') closeMenu({ restoreFocus: true });
   });
 
-  window.addEventListener('resize', () => {
-    if (window.innerWidth > 860) closeMenu();
+  compactNav.addEventListener('change', (event) => {
+    if (!event.matches) closeMenu();
   });
 }
 
@@ -70,7 +74,3 @@ if ('IntersectionObserver' in window && sections.length) {
 
   sections.forEach((section) => sectionObserver.observe(section));
 }
-
-document.querySelectorAll('[data-current-year]').forEach((node) => {
-  node.textContent = new Date().getFullYear();
-});
