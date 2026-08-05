@@ -15,6 +15,7 @@ python -m http.server 8000
 ## 페이지 구성
 
 - 소개: 현재 직위, 연구 분야, 연락처, 큰 프로필 사진
+- Plane sweep: 단순 다각형의 vertical trapezoidal decomposition을 실시간으로 그리는 figure
 - 연구 분야: computational geometry, algorithmic primitives for AI, AI-assisted algorithm design
 - Upcoming: 향후 발표 일정과 행사 링크
 - Selected papers: Largest Unit Rectangles를 첫 번째로 배치한 대표·최근 논문 4편
@@ -48,6 +49,19 @@ Computational Geometry 2025, SWAT 2026, ISAAC 2025, FSTTCS 2022 논문의 Figure
 `--band-*`, `--header-bg`, `--figure-bg`처럼 반투명하게 겹치는 배경은 `color-mix()`로 위 팔레트에서 파생시킵니다. 팔레트 값만 바꾸면 배경 띠도 같이 따라옵니다.
 
 자동 dark mode는 사용하지 않습니다. 사진도 흑백 필터 없이 원본 색상을 사용합니다.
+
+## 움직임
+
+- Plane sweep figure: `script.js`의 `initSweep()`이 `<canvas>`에 직접 그립니다. 다각형은 `POLY` 배열 하나로 정의되며, 각 x에서의 내부 구간은 even-odd 규칙으로 정확히 계산합니다. 마우스를 올리거나 가로로 드래그하면 sweep line을 직접 움직일 수 있고, 손을 떼면 그 위치에서 자동 재생이 이어집니다.
+- 스크롤 등장 효과: `data-reveal`이 붙은 요소를 IntersectionObserver가 관찰합니다.
+
+세 가지 안전장치가 있습니다.
+
+- `prefers-reduced-motion: reduce`이면 애니메이션을 멈추고 완성된 분할을 한 장면으로만 그립니다. 등장 효과도 끕니다.
+- canvas가 화면 밖이거나 탭이 비활성이면 `requestAnimationFrame`을 멈춥니다.
+- 등장 효과 CSS는 `<html class="js">`에서만 적용되므로, `script.js`가 실패해도 내용이 숨겨진 채로 남지 않습니다.
+
+연구 분야 카드는 subgrid를 써서 번호·도형·제목·본문이 세 카드에서 같은 행에 놓입니다. 제목 줄 수가 달라도 어긋나지 않습니다.
 
 ## 파일
 

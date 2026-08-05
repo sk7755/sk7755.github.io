@@ -249,6 +249,35 @@ cite {
   color: var(--coral);
 }
 
+/* Scroll reveal. Scoped to .js (set by an inline script in the head) so the
+   page is never left blank if script.js fails to load. */
+.js [data-reveal] {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 620ms var(--ease),
+    transform 720ms var(--ease);
+}
+
+.js [data-reveal].is-revealed {
+  opacity: 1;
+  transform: none;
+}
+
+.js .research-card:nth-child(2) {
+  transition-delay: 90ms;
+}
+
+.js .research-card:nth-child(3) {
+  transition-delay: 180ms;
+}
+
+.js .publication:nth-child(2) { transition-delay: 50ms; }
+.js .publication:nth-child(3) { transition-delay: 100ms; }
+.js .publication:nth-child(4) { transition-delay: 150ms; }
+.js .publication:nth-child(5) { transition-delay: 200ms; }
+.js .publication:nth-child(6) { transition-delay: 250ms; }
+
 .external::after {
   margin-left: 0.28em;
   content: "\2197";
@@ -440,7 +469,7 @@ cite {
 .hero {
   position: relative;
   padding-top: calc(var(--header-h) + clamp(2.5rem, 4.4vw + 1.1rem, 5rem));
-  padding-bottom: clamp(5.5rem, 4vw + 3.5rem, 7rem);
+  padding-bottom: clamp(2.75rem, 2vw + 1.5rem, 4rem);
 }
 
 .hero-grid {
@@ -593,6 +622,28 @@ cite {
   object-position: 25% 30%;
 }
 
+/* Live plane sweep, presented as one of the page's figure panels.
+   The construction itself lives in script.js. */
+
+.sweep-band {
+  padding-bottom: clamp(3.5rem, 4vw + 2rem, 5.5rem);
+}
+
+.sweep-canvas {
+  display: block;
+  width: 100%;
+  height: clamp(96px, 22vw, 250px);
+  background: #fff;
+  cursor: ew-resize;
+  touch-action: pan-y;
+}
+
+/* Scrubbing the sweep line shouldn't also nudge the panel around */
+.sweep-figure:hover {
+  box-shadow: var(--lift-md) var(--lift-md) 0 var(--accent-soft);
+  transform: none;
+}
+
 /* 5. Sections ------------------------------------------------ */
 
 .section {
@@ -643,17 +694,22 @@ cite {
   background: var(--band-paper);
 }
 
+/* Four shared row tracks — number, figure, title, body — so every card lines
+   up across all three columns no matter how many lines a title takes.
+   The parent's row-gap becomes the spacing inside each card. */
 .research-cards {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1.25rem;
+  grid-template-rows: repeat(4, auto);
+  column-gap: 1.25rem;
+  row-gap: 0.95rem;
 }
 
 .research-card {
   position: relative;
-  min-height: clamp(190px, 18vw + 60px, 245px);
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-row: span 4;
+  grid-template-rows: subgrid;
   padding: 1.6rem 1.5rem 1.55rem;
   overflow: hidden;
   border: 1px solid var(--rule-dark);
@@ -677,20 +733,75 @@ cite {
 }
 
 .research-card h3 {
-  margin-top: auto;
+  align-self: end;
   color: var(--ink);
   font-family: var(--serif);
-  font-size: 1.58rem;
+  font-size: 1.5rem;
   font-weight: 600;
   letter-spacing: -0.025em;
   line-height: 1.18;
 }
 
 .research-card > p:not(.card-number) {
-  margin-top: 0.8rem;
   color: var(--ink-soft);
   font-size: 0.92rem;
   line-height: 1.65;
+}
+
+/* Card diagrams */
+
+.card-figure {
+  align-self: center;
+  justify-self: start;
+  width: min(100%, 158px);
+  height: auto;
+  margin-block: 0.3rem;
+  overflow: visible;
+}
+
+.fig-edge,
+.fig-edge-thin {
+  fill: none;
+  stroke: color-mix(in srgb, var(--ink) 50%, transparent);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.fig-edge {
+  stroke-width: 1.5;
+}
+
+.fig-edge-thin {
+  stroke-width: 1.1;
+}
+
+.fig-cut {
+  fill: none;
+  stroke: var(--accent);
+  stroke-dasharray: 3 2.4;
+  stroke-linecap: round;
+  stroke-width: 1.2;
+}
+
+.fig-face {
+  fill: color-mix(in srgb, var(--accent-soft) 60%, transparent);
+  stroke: none;
+}
+
+.fig-bars rect {
+  fill: color-mix(in srgb, var(--accent-soft) 65%, transparent);
+  stroke: color-mix(in srgb, var(--ink) 40%, transparent);
+  stroke-width: 1.1;
+}
+
+.fig-dot circle {
+  fill: color-mix(in srgb, var(--ink) 58%, transparent);
+  stroke: none;
+}
+
+.fig-mark {
+  fill: var(--accent);
+  stroke: none;
 }
 
 /* Upcoming */
@@ -796,6 +907,16 @@ cite {
   border: 1px solid var(--rule-dark);
   background: var(--figure-bg);
   box-shadow: var(--lift-md) var(--lift-md) 0 var(--accent-soft, var(--teal-soft));
+  transition:
+    transform 220ms var(--ease),
+    box-shadow 220ms ease;
+}
+
+.paper-figure:hover {
+  box-shadow:
+    calc(var(--lift-md) + 3px) calc(var(--lift-md) + 3px) 0
+    var(--accent-soft, var(--teal-soft));
+  transform: translate(-3px, -3px);
 }
 
 .figure-topline {
@@ -1090,12 +1211,17 @@ cite {
     width: min(100%, 360px);
   }
 
+  /* Single column: rows no longer need to line up, so drop the subgrid */
   .research-cards {
     grid-template-columns: 1fr;
+    grid-template-rows: none;
+    row-gap: 1.25rem;
   }
 
   .research-card {
-    min-height: 175px;
+    grid-row: auto;
+    grid-template-rows: none;
+    row-gap: 0.85rem;
   }
 
   .upcoming-card {
@@ -1279,6 +1405,17 @@ cite {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+
+  /* Show everything outright rather than relying on the observer */
+  .js [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .paper-figure:hover {
+    transform: none;
+  }
 }
 
 @media print {
@@ -1298,8 +1435,23 @@ cite {
   body::before,
   body::after,
   .site-header,
-  .hero-photo {
+  .hero-photo,
+  .sweep-band {
     display: none !important;
+  }
+
+  .js [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .research-cards,
+  .research-card {
+    grid-template-rows: none;
+  }
+
+  .research-card {
+    grid-row: auto;
   }
 
   .hero,
