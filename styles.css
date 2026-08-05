@@ -344,14 +344,13 @@ cite {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: minmax(340px, 0.84fr) minmax(500px, 1.16fr);
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 390px);
   align-items: center;
-  gap: clamp(3rem, 7vw, 6.5rem);
+  gap: clamp(3.5rem, 9vw, 8rem);
 }
 
 .eyebrow,
 .section-index,
-.work-number,
 .card-number {
   color: var(--teal);
   font-family: var(--mono);
@@ -378,10 +377,30 @@ cite {
 .appointment {
   margin-top: 1.6rem;
   color: var(--ink);
+  line-height: 1.4;
+}
+
+.position-title {
+  display: block;
   font-family: var(--serif);
-  font-size: clamp(1.12rem, 2vw, 1.34rem);
+  font-size: clamp(1.45rem, 2.5vw, 1.9rem);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+
+.position-title > span {
+  color: var(--ink-soft);
+  font-family: var(--sans);
+  font-size: 0.66em;
   font-weight: 500;
-  line-height: 1.35;
+  letter-spacing: 0;
+}
+
+.institution {
+  display: block;
+  margin-top: 0.3rem;
+  color: var(--ink-soft);
+  font-size: 0.96rem;
 }
 
 .summary {
@@ -392,63 +411,58 @@ cite {
   line-height: 1.7;
 }
 
-.profile-note {
-  display: grid;
-  grid-template-columns: 112px minmax(0, 1fr);
-  align-items: center;
-  gap: 1.25rem;
-  max-width: 480px;
-  margin-top: 1.8rem;
-  padding-block: 1rem;
-  border-block: 1px solid var(--rule);
-}
-
-.portrait {
+.hero-photo {
   position: relative;
-  width: 112px;
+  justify-self: end;
+  width: min(100%, 390px);
   aspect-ratio: 4 / 5;
-  overflow: hidden;
+  min-width: 0;
   border: 1px solid var(--ink);
   background: var(--surface);
+  box-shadow: 14px 14px 0 var(--teal-soft);
 }
 
-.portrait::after {
+.hero-photo::before {
   position: absolute;
-  inset: auto 0 0 auto;
-  width: 25px;
-  height: 25px;
-  border-top: 1px solid var(--surface);
-  border-left: 1px solid var(--surface);
-  background: var(--coral);
+  z-index: 1;
+  top: -1px;
+  right: -1px;
+  width: 82px;
+  height: 82px;
+  border-top: 5px solid var(--ochre);
+  border-right: 5px solid var(--ochre);
   content: "";
-  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+  pointer-events: none;
 }
 
-.portrait img {
+.hero-photo::after {
+  position: absolute;
+  z-index: 1;
+  right: -1px;
+  bottom: -1px;
+  width: 54px;
+  height: 54px;
+  background: var(--coral);
+  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+  content: "";
+  pointer-events: none;
+}
+
+.hero-photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 19% 22%;
-  transform: scale(1.42);
-  transform-origin: 19% 18%;
-}
-
-.profile-note > div {
-  color: var(--ink-soft);
-  font-size: 0.86rem;
-  line-height: 1.65;
-}
-
-.profile-note a {
-  color: var(--ink);
-  text-decoration-color: var(--rule-dark);
+  object-position: 25% 30%;
 }
 
 .identity-links {
   display: flex;
   flex-wrap: wrap;
   gap: 0.55rem 1.1rem;
-  margin-top: 1.35rem;
+  max-width: 520px;
+  margin-top: 1.8rem;
+  padding-top: 1.15rem;
+  border-top: 1px solid var(--rule);
 }
 
 .identity-links a {
@@ -464,21 +478,11 @@ cite {
   color: var(--coral);
 }
 
-.hero-figure,
-.work-figure {
+.paper-figure {
   position: relative;
   min-width: 0;
   border: 1px solid var(--rule-dark);
   background: rgba(255, 253, 247, 0.93);
-}
-
-.hero-figure::before {
-  position: absolute;
-  z-index: -1;
-  inset: 14px -14px -14px 14px;
-  border: 1px solid rgba(22, 138, 138, 0.55);
-  background: var(--teal-soft);
-  content: "";
 }
 
 .figure-topline {
@@ -494,127 +498,13 @@ cite {
   letter-spacing: 0.07em;
 }
 
-.hero-figure > svg {
-  width: 100%;
-  height: auto;
-  padding: 0.8rem;
-}
-
-.plot-grid path,
-.work-grid path {
-  fill: none;
-  stroke: var(--rule);
-  stroke-width: 0.7;
-}
-
-.partition-pieces .piece {
-  transition: opacity 180ms ease;
-}
-
-.piece-a,
-.piece-d {
-  fill: var(--teal-soft);
-}
-
-.piece-b,
-.piece-e {
-  fill: var(--blue-soft);
-}
-
-.piece-c {
-  fill: var(--ochre-soft);
-}
-
-.hero-figure:hover .piece {
-  opacity: 0.76;
-}
-
-.hero-figure:hover .piece-c {
-  opacity: 1;
-}
-
-.cut {
-  fill: none;
-  stroke: var(--blue);
-  stroke-dasharray: 5 5;
-  stroke-width: 1.35;
-}
-
-.cut-focus {
-  stroke: var(--coral);
-  stroke-width: 2.3;
-}
-
-.polygon-outline {
-  fill: none;
-  stroke: var(--ink);
-  stroke-linejoin: round;
-  stroke-width: 2.2;
-}
-
-.vertices circle {
-  fill: var(--surface);
-  stroke: var(--ink);
-  stroke-width: 1.25;
-}
-
-.dimension {
-  color: var(--ochre);
-}
-
-.dimension path {
-  fill: none;
-  stroke: var(--ochre);
-  stroke-width: 1.25;
-}
-
-.dimension text,
-.annotations text,
-.axes text {
-  fill: var(--ink);
-  font-family: var(--serif);
-  font-size: 15px;
-  font-style: italic;
-}
-
-.dimension text {
-  fill: #9c6415;
-  font-family: var(--mono);
-  font-size: 12px;
-  font-style: normal;
-}
-
-.axes {
-  color: var(--ink);
-}
-
-.axes path {
-  fill: none;
-  stroke: var(--ink);
-  stroke-width: 1.3;
-}
-
-.annotations text {
-  fill: var(--ink-soft);
-}
-
-.annotations text:first-child {
-  fill: var(--coral);
-  font-weight: 600;
-}
-
-.hero-figure figcaption,
-.work-figure figcaption {
+.paper-figure figcaption {
   padding: 0.85rem 0.95rem;
   border-top: 1px solid var(--rule);
   color: var(--muted);
   font-family: var(--mono);
   font-size: 0.68rem;
   line-height: 1.5;
-}
-
-.hero-figure figcaption span {
-  color: var(--ink);
 }
 
 /* Shared section structure */
@@ -670,8 +560,10 @@ cite {
 
 .research-card {
   position: relative;
-  min-height: 430px;
-  padding: 1rem 1.4rem 1.45rem;
+  min-height: 245px;
+  display: flex;
+  flex-direction: column;
+  padding: 1.6rem 1.5rem 1.55rem;
   overflow: hidden;
   border: 1px solid var(--rule-dark);
   background: var(--surface);
@@ -708,336 +600,142 @@ cite {
   --card-shadow: var(--blue-soft);
 }
 
-.mini-figure {
-  height: 170px;
-  display: grid;
-  place-items: center;
-  margin-bottom: 1.4rem;
-  border-bottom: 1px solid var(--rule);
-}
-
-.mini-figure svg {
-  width: min(100%, 230px);
-}
-
 .research-card h3 {
-  margin-top: 0.55rem;
+  margin-top: auto;
   color: var(--ink);
   font-family: var(--serif);
-  font-size: 1.52rem;
+  font-size: 1.58rem;
   font-weight: 600;
   letter-spacing: -0.025em;
   line-height: 1.18;
 }
 
-.research-card > p:not(.card-number):not(.keywords) {
+.research-card > p:not(.card-number) {
   margin-top: 0.8rem;
   color: var(--ink-soft);
   font-size: 0.92rem;
   line-height: 1.65;
 }
 
-.research-card .keywords {
-  position: absolute;
-  right: 1.4rem;
-  bottom: 1.25rem;
-  left: 1.4rem;
-  color: var(--muted);
-  font-family: var(--mono);
-  font-size: 0.64rem;
-  letter-spacing: 0.025em;
-  text-transform: uppercase;
-}
+/* Selected papers */
 
-.mini-fill-a,
-.mini-fill-c {
-  fill: var(--teal-soft);
-}
-
-.mini-fill-b,
-.mini-fill-d {
-  fill: var(--blue-soft);
-}
-
-.mini-cuts {
-  fill: none;
-  stroke: var(--coral);
-  stroke-dasharray: 3 3;
-  stroke-width: 1.25;
-}
-
-.mini-outline,
-.convex-outline {
-  fill: none;
-  stroke: var(--ink);
-  stroke-linejoin: round;
-  stroke-width: 1.8;
-}
-
-.convex-fill {
-  fill: var(--blue-soft);
-}
-
-.histogon-fill {
-  fill: var(--ochre-soft);
-  stroke: var(--ochre);
-  stroke-linejoin: round;
-  stroke-width: 1.5;
-}
-
-.histogon-grid {
-  fill: none;
-  stroke: rgba(217, 148, 47, 0.55);
-  stroke-width: 0.8;
-}
-
-.angle-mark {
-  fill: none;
-  stroke: var(--teal);
-  stroke-width: 1.2;
-}
-
-.theta-label,
-.q-label {
-  fill: var(--ink);
-  font-family: var(--serif);
-  font-size: 13px;
-  font-style: italic;
-}
-
-.nn-ball {
-  fill: var(--blue-soft);
-  stroke: var(--blue);
-  stroke-width: 1.5;
-}
-
-.nn-sites circle {
-  fill: var(--surface);
-  stroke: var(--ink-soft);
-  stroke-width: 1.2;
-}
-
-.nn-near circle {
-  fill: var(--teal);
-}
-
-.nn-query {
-  fill: none;
-  stroke: var(--coral);
-  stroke-linecap: round;
-  stroke-width: 2;
-}
-
-/* Selected work */
-
-.work-section {
+.papers-section {
   padding-bottom: 4rem;
 }
 
-.work-list {
+.featured-papers {
   display: grid;
 }
 
-.work-item {
+.featured-paper {
   display: grid;
-  grid-template-columns: minmax(0, 1.12fr) minmax(330px, 0.88fr);
+  grid-template-columns: minmax(0, 1.14fr) minmax(330px, 0.86fr);
   align-items: center;
-  gap: clamp(2.5rem, 6vw, 6rem);
-  padding: 3.5rem 0;
+  gap: clamp(2.5rem, 6vw, 5.5rem);
+  padding: 4rem 0;
   border-top: 1px solid var(--rule);
 }
 
-.work-item:first-child {
+.featured-paper:first-child {
   padding-top: 0;
   border-top: 0;
 }
 
-.work-item-reverse {
-  grid-template-columns: minmax(330px, 0.88fr) minmax(0, 1.12fr);
+.featured-paper-reverse {
+  grid-template-columns: minmax(330px, 0.86fr) minmax(0, 1.14fr);
 }
 
-.work-item-reverse .work-figure {
+.featured-paper-reverse .paper-figure {
   order: 2;
 }
 
-.work-item-reverse .work-copy {
+.featured-paper-reverse .paper-copy {
   order: 1;
 }
 
-.work-figure {
-  box-shadow: 8px 8px 0 var(--work-shadow, var(--teal-soft));
+.paper-figure {
+  --paper-shadow: var(--teal-soft);
+
+  min-width: 0;
+  overflow: hidden;
+  box-shadow: 9px 9px 0 var(--paper-shadow);
 }
 
-.work-figure-histogon {
-  --work-shadow: var(--ochre-soft);
+.paper-figure-coral {
+  --paper-shadow: var(--coral-soft);
 }
 
-.work-figure-rectangle {
-  --work-shadow: var(--blue-soft);
+.paper-figure-ochre {
+  --paper-shadow: var(--ochre-soft);
 }
 
-.work-figure > svg {
+.figure-link {
+  display: block;
+  padding: clamp(1.2rem, 2.6vw, 2rem);
+  background: #fff;
+}
+
+.figure-link img {
+  display: block;
   width: 100%;
-  padding: 0.65rem 0.8rem 0.35rem;
+  height: auto;
 }
 
-.partition-fill-1,
-.partition-fill-4 {
-  fill: var(--teal-soft);
+.paper-figure figcaption {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
 }
 
-.partition-fill-2,
-.partition-fill-5 {
-  fill: var(--blue-soft);
+.paper-figure figcaption span {
+  max-width: 62ch;
 }
 
-.partition-fill-3 {
-  fill: var(--ochre-soft);
-}
-
-.parallel-cuts {
-  fill: none;
-  stroke: var(--coral);
-  stroke-dasharray: 5 4;
-  stroke-width: 1.5;
-}
-
-.work-polygon-outline,
-.rectangle-polygon {
-  fill: none;
-  stroke: var(--ink);
-  stroke-linejoin: round;
-  stroke-width: 2;
-}
-
-.rectangle-polygon {
-  fill: var(--blue-soft);
-  fill-opacity: 0.75;
-}
-
-.measure-line path,
-.direction-labels path {
-  fill: none;
-  stroke: var(--ochre);
-  stroke-width: 1.25;
-}
-
-.measure-line text,
-.direction-labels text,
-.shape-label,
-.unit-label,
-.height-label,
-.theta-annotation text {
-  fill: var(--ink);
-  font-family: var(--serif);
-  font-size: 14px;
-  font-style: italic;
-}
-
-.histogon-outer {
-  fill: var(--blue-soft);
-  fill-opacity: 0.58;
-  stroke: var(--ink);
-  stroke-linejoin: round;
-  stroke-width: 2;
-}
-
-.histogon-solution {
-  fill: var(--ochre-soft);
-  fill-opacity: 0.93;
-  stroke: var(--ochre);
-  stroke-linejoin: round;
-  stroke-width: 2;
-}
-
-.histogon-unit-lines {
-  fill: none;
-  stroke: rgba(156, 100, 21, 0.52);
-  stroke-width: 0.9;
-}
-
-.contact-points circle {
-  fill: var(--coral);
-  stroke: var(--surface);
-  stroke-width: 1.5;
-}
-
-.theta-annotation path {
-  fill: none;
-  stroke: var(--teal);
-  stroke-width: 1.35;
-}
-
-.solution-label {
-  fill: #8d5e16;
-}
-
-.unit-rectangle {
-  fill: var(--ochre-soft);
-  fill-opacity: 0.9;
-  stroke: var(--ochre);
-  stroke-width: 2;
-}
-
-.unit-bracket,
-.height-bracket {
-  fill: none;
-  stroke: var(--teal);
-  stroke-width: 1.3;
-}
-
-.work-copy {
-  max-width: 475px;
-}
-
-.work-copy h3 {
-  margin-top: 0.7rem;
+.paper-figure figcaption a {
+  flex: none;
   color: var(--ink);
-  font-family: var(--serif);
-  font-size: clamp(2rem, 4vw, 2.75rem);
-  font-weight: 600;
-  letter-spacing: -0.04em;
-  line-height: 1.05;
 }
 
-.work-copy > p:not(.work-number) {
-  margin-top: 1.15rem;
-  color: var(--ink-soft);
-  line-height: 1.72;
+.paper-copy {
+  max-width: 500px;
 }
 
-.result-list {
-  padding: 0;
-  margin-top: 1.25rem;
-  list-style: none;
-}
-
-.result-list li {
-  position: relative;
-  padding: 0.38rem 0 0.38rem 1.25rem;
-  border-top: 1px solid var(--rule);
-  color: var(--ink-soft);
+.paper-venue {
+  color: var(--teal);
   font-family: var(--mono);
   font-size: 0.7rem;
-  line-height: 1.5;
+  font-weight: 500;
+  letter-spacing: 0.065em;
   text-transform: uppercase;
 }
 
-.result-list li::before {
-  position: absolute;
-  top: 0.8rem;
-  left: 0.1rem;
-  width: 0.45rem;
-  height: 0.45rem;
-  border: 1px solid var(--teal);
-  content: "";
+.paper-copy h3 {
+  margin-top: 0.75rem;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: clamp(1.9rem, 3.3vw, 2.55rem);
+  font-weight: 600;
+  letter-spacing: -0.038em;
+  line-height: 1.08;
+}
+
+.paper-copy .authors {
+  margin-top: 0.85rem;
+  font-size: 0.84rem;
+}
+
+.paper-summary {
+  margin-top: 1.15rem;
+  color: var(--ink-soft);
+  line-height: 1.72;
 }
 
 .paper-links {
   display: flex;
   flex-wrap: wrap;
   gap: 0.6rem;
-  margin-top: 1.5rem;
+  margin-top: 1.45rem;
 }
 
 .paper-links a {
@@ -1056,7 +754,6 @@ cite {
   border-color: var(--coral);
   color: var(--coral);
 }
-
 /* Publications */
 
 .publications-section {
@@ -1201,8 +898,8 @@ cite {
   }
 
   .hero-grid {
-    grid-template-columns: minmax(310px, 0.82fr) minmax(420px, 1.18fr);
-    gap: 3.5rem;
+    grid-template-columns: minmax(0, 1fr) minmax(290px, 340px);
+    gap: clamp(2.5rem, 6vw, 4.5rem);
   }
 
   .hero h1 {
@@ -1210,7 +907,7 @@ cite {
   }
 
   .research-card {
-    min-height: 450px;
+    min-height: 235px;
   }
 }
 
@@ -1294,8 +991,9 @@ cite {
     max-width: 650px;
   }
 
-  .hero-figure {
-    width: min(100%, 650px);
+  .hero-photo {
+    justify-self: start;
+    width: min(100%, 360px);
   }
 
   .section {
@@ -1307,43 +1005,21 @@ cite {
   }
 
   .research-card {
-    min-height: 0;
-    display: grid;
-    grid-template-columns: 180px minmax(0, 1fr);
-    column-gap: 1.35rem;
-    padding-bottom: 1.4rem;
+    min-height: 200px;
   }
 
-  .mini-figure {
-    grid-row: 1 / span 4;
-    height: 190px;
-    margin: 0;
-    padding-right: 1.2rem;
-    border-right: 1px solid var(--rule);
-    border-bottom: 0;
-  }
-
-  .research-card .card-number {
-    margin-top: 0.5rem;
-  }
-
-  .research-card .keywords {
-    position: static;
-    margin-top: 1rem;
-  }
-
-  .work-item,
-  .work-item-reverse {
+  .featured-paper,
+  .featured-paper-reverse {
     grid-template-columns: minmax(0, 1fr);
     gap: 2.5rem;
   }
 
-  .work-item-reverse .work-figure,
-  .work-item-reverse .work-copy {
+  .featured-paper-reverse .paper-figure,
+  .featured-paper-reverse .paper-copy {
     order: initial;
   }
 
-  .work-copy {
+  .paper-copy {
     max-width: 650px;
   }
 }
@@ -1375,29 +1051,17 @@ cite {
     display: block;
   }
 
-  .profile-note {
-    grid-template-columns: 92px minmax(0, 1fr);
-    gap: 1rem;
-  }
-
-  .portrait {
-    width: 92px;
-  }
-
   .identity-links {
     gap: 0.55rem 0.9rem;
   }
 
-  .hero-figure::before {
-    inset: 8px -8px -8px 8px;
+  .hero-photo {
+    width: min(100%, 330px);
+    box-shadow: 9px 9px 0 var(--teal-soft);
   }
 
   .figure-topline {
     font-size: 0.58rem;
-  }
-
-  .hero-figure > svg {
-    padding: 0.25rem;
   }
 
   .section-heading,
@@ -1418,32 +1082,30 @@ cite {
   }
 
   .research-card {
-    display: block;
+    min-height: 190px;
     padding-inline: 1.15rem;
   }
 
-  .mini-figure {
-    height: 155px;
-    margin-bottom: 1.25rem;
-    padding: 0;
-    border-right: 0;
-    border-bottom: 1px solid var(--rule);
+  .featured-paper {
+    padding-block: 3rem;
   }
 
-  .work-item {
-    padding-block: 2.75rem;
+  .paper-figure {
+    box-shadow: 5px 5px 0 var(--paper-shadow);
   }
 
-  .work-figure {
-    box-shadow: 5px 5px 0 var(--work-shadow, var(--teal-soft));
+  .figure-link {
+    padding: 0.85rem;
   }
 
-  .work-figure > svg {
-    padding-inline: 0.15rem;
+  .paper-figure figcaption {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.35rem;
   }
 
-  .work-copy h3 {
-    font-size: 2.15rem;
+  .paper-copy h3 {
+    font-size: 2.05rem;
   }
 
   .publication {
@@ -1509,9 +1171,7 @@ cite {
   body::before,
   body::after,
   .site-header,
-  .hero-figure,
-  .mini-figure,
-  .work-figure {
+  .hero-photo {
     display: none !important;
   }
 
@@ -1522,8 +1182,8 @@ cite {
 
   .hero-grid,
   .section-heading,
-  .work-item,
-  .work-item-reverse {
+  .featured-paper,
+  .featured-paper-reverse {
     display: block;
   }
 
@@ -1533,7 +1193,7 @@ cite {
 
   .research-card,
   .publication,
-  .work-item {
+  .featured-paper {
     break-inside: avoid;
   }
 

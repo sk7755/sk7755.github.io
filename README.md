@@ -14,9 +14,9 @@ python -m http.server 8000
 
 ## 페이지 구성
 
-- 소개: 소속, 연구 분야, 학위, 연락처
-- 연구 분야: polygon partitioning, shape approximation, geometric primitives for AI
-- 대표 연구: width-constrained partition, histogon, largest unit rectangle
+- 소개: 현재 직위, 연구 분야, 연락처, 큰 프로필 사진
+- 연구 분야: polygon partitioning, geometric approximation, geometric data structures
+- Selected papers: 원 논문의 Figure를 사용한 대표 논문 3편
 - Selected publications: 연구 흐름을 보여 주는 논문 6편
 - 전체 경력과 출판 목록: `cv_15.pdf`와 DBLP 링크
 
@@ -24,12 +24,11 @@ python -m http.server 8000
 
 ## 디자인
 
-논문에서 사용하는 실제 기하 구조를 SVG로 다시 그렸습니다.
+SWAT 2026, ISAAC 2025, FSTTCS 2022 논문의 Figure를 원본 비율로 사용합니다. 임의로 재구성한 연구 도식은 넣지 않았습니다.
 
-- 평행 절단과 directional width
-- convex polygon 안의 inscribed histogon
-- 고정 변 길이가 1인 rotated rectangle
-- contact point, 방향 벡터, 보조 격자
+- vertical trapezoidal decomposition과 strip partition
+- windmill polygon의 guillotine / non-guillotine partition
+- inscribed / circumscribed histogon의 다섯 변형
 
 색상은 의미에 따라 일관되게 사용합니다.
 
@@ -46,9 +45,10 @@ python -m http.server 8000
 
 ## 파일
 
-- `index.html`: 콘텐츠와 inline SVG 연구 도식
+- `index.html`: 홈페이지 콘텐츠와 논문 링크
 - `styles.css`: 레이아웃, 색상, 반응형 디자인
 - `script.js`: 모바일 메뉴와 현재 섹션 표시
+- `assets/papers/`: 원 논문에서 추출한 Figure 이미지
 - `profile.jpg`: 프로필 사진
 - `cv_15.pdf`: 다운로드용 CV
 - `favicon.svg`: polygon partition 모티프 아이콘
@@ -56,9 +56,9 @@ python -m http.server 8000
 ## 내용 수정
 
 - 논문 정보와 링크: `index.html`의 `#publications`
-- 대표 연구 설명: `index.html`의 `#work`
+- 대표 논문과 Figure: `index.html`의 `#work`, `assets/papers/`
 - 색상과 크기: `styles.css` 상단의 `:root`
-- 프로필 사진 크롭: `styles.css`의 `.portrait img`
+- 프로필 사진 크롭: `styles.css`의 `.hero-photo img`
 - CV 교체: 새 PDF를 `cv_15.pdf`라는 이름으로 덮어쓰기
 
 ## GitHub Pages 배포
@@ -66,7 +66,7 @@ python -m http.server 8000
 저장소가 이미 `https://github.com/sk7755/sk7755.github.io.git`에 연결되어 있다면 다음 명령으로 반영합니다.
 
 ```powershell
-git add index.html styles.css favicon.svg README.md
+git add index.html styles.css favicon.svg README.md assets/papers
 git commit -m "Remodel academic homepage"
 git push origin main
 ```
