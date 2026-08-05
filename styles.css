@@ -364,7 +364,7 @@ cite {
   margin-top: 0.85rem;
   color: var(--ink);
   font-family: var(--serif);
-  font-size: clamp(3.6rem, 7vw, 6.15rem);
+  font-size: clamp(3rem, 4.6vw, 4.35rem);
   font-weight: 600;
   letter-spacing: -0.06em;
   line-height: 0.88;
@@ -375,9 +375,17 @@ cite {
 }
 
 .appointment {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(1rem, 2.5vw, 1.8rem);
   margin-top: 1.6rem;
   color: var(--ink);
   line-height: 1.4;
+}
+
+.appointment-copy {
+  min-width: 0;
 }
 
 .position-title {
@@ -389,6 +397,8 @@ cite {
 }
 
 .position-title > span {
+  display: block;
+  margin-top: 0.08rem;
   color: var(--ink-soft);
   font-family: var(--sans);
   font-size: 0.66em;
@@ -401,6 +411,19 @@ cite {
   margin-top: 0.3rem;
   color: var(--ink-soft);
   font-size: 0.96rem;
+}
+
+.kias-logo {
+  flex: 0 0 auto;
+  width: clamp(140px, 13vw, 170px);
+  padding-left: clamp(0.8rem, 1.8vw, 1.25rem);
+  border-left: 1px solid var(--rule-dark);
+  line-height: 0;
+}
+
+.kias-logo img {
+  width: 100%;
+  height: auto;
 }
 
 .summary {
@@ -903,7 +926,7 @@ cite {
   }
 
   .hero h1 {
-    font-size: clamp(3.4rem, 7vw, 5rem);
+    font-size: clamp(3rem, 5vw, 4.1rem);
   }
 
   .research-card {
@@ -1043,7 +1066,7 @@ cite {
   }
 
   .hero h1 {
-    font-size: clamp(3.2rem, 17vw, 4.65rem);
+    font-size: clamp(2.75rem, 12vw, 3.65rem);
     line-height: 0.9;
   }
 
@@ -1053,6 +1076,15 @@ cite {
 
   .identity-links {
     gap: 0.55rem 0.9rem;
+  }
+
+  .position-title {
+    font-size: 1.32rem;
+  }
+
+  .kias-logo {
+    width: 132px;
+    padding-left: 0.8rem;
   }
 
   .hero-photo {
@@ -1140,6 +1172,20 @@ cite {
 
   .footer-right {
     text-align: left;
+  }
+}
+
+@media (max-width: 460px) {
+  .appointment {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+
+  .kias-logo {
+    width: 145px;
+    padding-left: 0;
+    border-left: 0;
   }
 }
 
