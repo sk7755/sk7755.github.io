@@ -15,12 +15,14 @@ python -m http.server 8000
 ## 페이지 구성
 
 - 소개: 현재 직위, 연구 분야, 연락처, 큰 프로필 사진
-- Plane sweep: 단순 다각형의 vertical trapezoidal decomposition을 실시간으로 그리는 figure
+- Largest unit rectangle: 볼록다각형에 내접하는 최대 unit rectangle을 모든 방향에 대해 실시간으로 계산해 보여 주는 figure
 - 연구 분야: computational geometry, algorithmic primitives for AI, AI-assisted algorithm design
 - Upcoming: 향후 발표 일정과 행사 링크
-- Selected papers: Largest Unit Rectangles를 첫 번째로 배치한 대표·최근 논문 4편
-- Selected publications: 연구 흐름을 보여 주는 논문 6편
+- Featured papers: Largest Unit Rectangles를 첫 번째로 배치한 대표·최근 논문 4편을 figure와 함께 자세히
+- Publications: 연구 흐름을 보여 주는 논문 6편의 목록
 - 전체 경력과 출판 목록: `cv_15.pdf`
+
+Featured papers와 Publications는 역할이 다릅니다. 앞쪽은 figure를 곁들인 소개이고, 뒤쪽은 연도순 목록입니다. 두 제목이 모두 "Selected ...”이면 구분이 되지 않으므로 이렇게 나눴습니다.
 
 홈페이지에는 CV 전체를 옮기지 않습니다. 수상, 특허, 교육 이력, 프로젝트 목록 등은 CV에만 유지합니다.
 
@@ -52,7 +54,13 @@ Computational Geometry 2025, SWAT 2026, ISAAC 2025, FSTTCS 2022 논문의 Figure
 
 ## 움직임
 
-- Plane sweep figure: `script.js`의 `initSweep()`이 `<canvas>`에 직접 그립니다. 다각형은 `POLY` 배열 하나로 정의되며, 각 x에서의 내부 구간은 even-odd 규칙으로 정확히 계산합니다. 마우스를 올리거나 가로로 드래그하면 sweep line을 직접 움직일 수 있고, 손을 떼면 그 위치에서 자동 재생이 이어집니다.
+- Largest unit rectangle figure: `script.js`의 `initRectFigure()`가 `<canvas>`에 직접 그립니다. 볼록다각형은 `POLY` 배열 하나로 정의합니다. 방향 θ에 대해 다각형을 −θ만큼 돌리면 직사각형이 축에 나란해지고, 볼록다각형은 네 꼭짓점을 모두 품을 때에만 직사각형을 품으므로, 왼쪽 변이 x에 놓인 폭 1짜리 직사각형의 최대 높이는
+
+  ```
+  f(x) = min(hi(x), hi(x+1)) − max(lo(x), lo(x+1))
+  ```
+
+  입니다. `hi`는 오목, `lo`는 볼록이므로 `f`는 오목이고 ternary search가 진짜 최적해로 수렴합니다. 폭이 1이므로 이 높이가 곧 넓이입니다. 경계에 닿는 꼭짓점(contact)은 동그라미로 표시합니다. 마우스를 올리거나 가로로 드래그하면 θ를 직접 돌릴 수 있고, 손을 떼면 그 각도에서 자동 재생이 이어집니다. 근거 논문은 Computational Geometry 2025입니다.
 - 스크롤 등장 효과: `data-reveal`이 붙은 요소를 IntersectionObserver가 관찰합니다.
 
 세 가지 안전장치가 있습니다.

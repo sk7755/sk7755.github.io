@@ -43,13 +43,7 @@
 
     <header class="site-header" data-header>
       <div class="wrap header-inner">
-        <a class="wordmark" href="#top" aria-label="Jaehoon Chung, home">
-          <svg viewBox="0 0 34 30" aria-hidden="true">
-            <path class="mark-polygon" d="M3 7 15 2l7 5 9-2v18l-10 5-7-5-11 3Z"></path>
-            <path class="mark-cut" d="M12 3v22M21 6v21"></path>
-          </svg>
-          <span>Jaehoon Chung</span>
-        </a>
+        <a class="wordmark" href="#top">Jaehoon Chung</a>
 
         <button
           class="menu-toggle"
@@ -66,7 +60,7 @@
         <nav id="primary-navigation" class="nav" aria-label="Primary" data-navigation>
           <a href="#research">Research</a>
           <a href="#upcoming">Upcoming</a>
-          <a href="#work">Selected papers</a>
+          <a href="#work">Featured papers</a>
           <a href="#publications">Publications</a>
           <a class="nav-cv external" href="cv_15.pdf" target="_blank" rel="noreferrer">CV</a>
         </nav>
@@ -123,17 +117,19 @@
         </div>
       </section>
 
-      <section class="sweep-band" aria-labelledby="sweep-caption">
+      <section class="demo-band" aria-labelledby="demo-caption">
         <div class="wrap">
-          <figure class="paper-figure sweep-figure accent-teal">
+          <figure class="paper-figure demo-figure accent-teal">
             <div class="figure-topline">
-              <span>Plane sweep</span>
-              <span>Drag to scrub</span>
+              <span>Largest unit rectangle</span>
+              <span>Drag to rotate</span>
             </div>
-            <canvas class="sweep-canvas" data-sweep aria-hidden="true"></canvas>
-            <figcaption id="sweep-caption">
-              Vertical trapezoidal decomposition of a simple polygon: the sweep line
-              drops a chord at every vertex it passes.
+            <canvas class="demo-canvas" data-demo aria-hidden="true"></canvas>
+            <figcaption id="demo-caption">
+              The largest rectangle of unit width inscribed in a convex polygon, over all
+              orientations &theta; &isin; [0,&nbsp;&pi;). Computed live; contacts with the
+              boundary are ringed.
+              <a class="external" href="https://doi.org/10.1016/j.comgeo.2024.102135" target="_blank" rel="noreferrer">Computational Geometry 2025</a>
             </figcaption>
           </figure>
         </div>
@@ -235,9 +231,9 @@
       <section id="work" class="section papers-section" aria-labelledby="work-title">
         <div class="wrap">
           <header class="section-heading" data-reveal>
-            <p class="section-index">03 / Papers</p>
-            <h2 id="work-title">Selected papers</h2>
-            <p>Figures are reproduced from the papers.</p>
+            <p class="section-index">03 / Featured</p>
+            <h2 id="work-title">Featured papers</h2>
+            <p>Four results in more detail. Figures are reproduced from the papers.</p>
           </header>
 
           <article class="featured-paper representative-paper" data-reveal aria-labelledby="unit-rectangle-title">
@@ -400,9 +396,9 @@
         <div class="wrap">
           <header class="section-heading" data-reveal>
             <p class="section-index">04 / Publications</p>
-            <h2 id="publications-title">Selected publications</h2>
+            <h2 id="publications-title">Publications</h2>
             <p>
-              Complete publication list:
+              A selection, most recent first. The complete list is in the
               <a class="external" href="cv_15.pdf" target="_blank" rel="noreferrer">CV</a>.
             </p>
           </header>
