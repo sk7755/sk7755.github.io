@@ -5,23 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta
       name="description"
-      content="Jaehoon Chung, research fellow at KIAS. Computational geometry, data structures, and algorithm design."
+      content="Jaehoon Chung is a computational geometry researcher at the Korea Institute for Advanced Study."
     >
-    <meta name="theme-color" content="#faf9f6" media="(prefers-color-scheme: light)">
-    <meta name="theme-color" content="#101215" media="(prefers-color-scheme: dark)">
-    <meta property="og:title" content="Jaehoon Chung">
+    <meta name="theme-color" content="#f5f1e8">
+    <meta property="og:title" content="Jaehoon Chung | Computational Geometry">
     <meta
       property="og:description"
-      content="Research fellow at KIAS. Computational geometry, data structures, and algorithm design."
+      content="Research in polygon partitioning, geometric approximation, and algorithmic primitives for AI."
     >
     <meta property="og:type" content="website">
-    <title>Jaehoon Chung</title>
+    <title>Jaehoon Chung | Computational Geometry</title>
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap"
     >
     <link rel="preload" href="profile.jpg" as="image" fetchpriority="high">
     <link rel="stylesheet" href="styles.css">
@@ -31,7 +30,13 @@
 
     <header class="site-header" data-header>
       <div class="wrap header-inner">
-        <a class="wordmark" href="#top">Jaehoon&nbsp;Chung</a>
+        <a class="wordmark" href="#top" aria-label="Jaehoon Chung, home">
+          <svg viewBox="0 0 34 30" aria-hidden="true">
+            <path class="mark-polygon" d="M3 7 15 2l7 5 9-2v18l-10 5-7-5-11 3Z"></path>
+            <path class="mark-cut" d="M12 3v22M21 6v21"></path>
+          </svg>
+          <span>Jaehoon Chung</span>
+        </a>
 
         <button
           class="menu-toggle"
@@ -47,287 +52,457 @@
 
         <nav id="primary-navigation" class="nav" aria-label="Primary" data-navigation>
           <a href="#research">Research</a>
+          <a href="#work">Selected work</a>
           <a href="#publications">Publications</a>
-          <a href="#talks">Talks</a>
-          <a class="nav-cv" href="cv_15.pdf" target="_blank" rel="noreferrer">CV<span class="ext" aria-hidden="true">↗</span></a>
+          <a class="nav-cv external" href="cv_15.pdf" target="_blank" rel="noreferrer">CV</a>
         </nav>
       </div>
     </header>
 
     <main id="main">
-      <section id="top" class="intro" aria-labelledby="name">
-        <div class="wrap intro-grid">
-          <div class="intro-main">
-            <h1 id="name">Jaehoon Chung</h1>
-            <p class="standfirst">
-              Research Fellow, Center for AI and Natural Sciences,<br>
-              Korea Institute for Advanced Study
+      <section id="top" class="hero" aria-labelledby="name">
+        <div class="wrap hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Computational geometry &middot; theoretical computer science</p>
+            <h1 id="name">Jaehoon <span>Chung</span></h1>
+            <p class="appointment">
+              Research Fellow<br>
+              Center for AI and Natural Sciences, KIAS
+            </p>
+            <p class="summary">
+              I study polygon partitioning, geometric containment and approximation,
+              and data structures for algorithmic problems in AI.
             </p>
 
-            <p class="bio">
-              I received my Ph.D. from POSTECH in 2025, advised by
-              <a href="https://heekap.github.io/" target="_blank" rel="noreferrer">Hee-Kap Ahn</a>.
-              From September 2026 I will be an AI Fellow at KIAS.
-            </p>
+            <div class="profile-note">
+              <figure class="portrait">
+                <img
+                  src="profile.jpg"
+                  width="1080"
+                  height="1440"
+                  alt="Portrait of Jaehoon Chung"
+                  fetchpriority="high"
+                >
+              </figure>
+              <div>
+                <p>Ph.D., POSTECH, 2025</p>
+                <p>Advisor: <a href="https://heekap.github.io/" target="_blank" rel="noreferrer">Hee-Kap Ahn</a></p>
+                <p>AI Fellow at KIAS from September 2026</p>
+              </div>
+            </div>
 
-            <p class="idlinks">
-              <a href="mailto:sk7755@kias.re.kr">sk7755@kias.re.kr</a>
-              <span class="sep" aria-hidden="true">·</span>
-              <a href="cv_15.pdf" target="_blank" rel="noreferrer">CV<span class="ext" aria-hidden="true">↗</span></a>
-              <span class="sep" aria-hidden="true">·</span>
-              <a href="https://dblp.org/pid/245/8388.html" target="_blank" rel="noreferrer">dblp<span class="ext" aria-hidden="true">↗</span></a>
-              <span class="sep" aria-hidden="true">·</span>
-              <a href="https://orcid.org/0000-0003-3278-9213" target="_blank" rel="noreferrer">ORCID<span class="ext" aria-hidden="true">↗</span></a>
-              <span class="sep" aria-hidden="true">·</span>
-              <a href="https://github.com/sk7755" target="_blank" rel="noreferrer">GitHub<span class="ext" aria-hidden="true">↗</span></a>
-            </p>
+            <div class="identity-links" aria-label="Profile links">
+              <a href="mailto:sk7755@kias.re.kr">Email</a>
+              <a class="external" href="cv_15.pdf" target="_blank" rel="noreferrer">CV</a>
+              <a class="external" href="https://dblp.org/pid/245/8388.html" target="_blank" rel="noreferrer">DBLP</a>
+              <a class="external" href="https://orcid.org/0000-0003-3278-9213" target="_blank" rel="noreferrer">ORCID</a>
+              <a class="external" href="https://github.com/sk7755" target="_blank" rel="noreferrer">GitHub</a>
+            </div>
           </div>
 
-          <figure class="portrait">
-            <img
-              src="profile.jpg"
-              width="1080"
-              height="1440"
-              alt="Portrait of Jaehoon Chung"
-              fetchpriority="high"
-            >
+          <figure class="hero-figure" aria-labelledby="hero-figure-caption">
+            <div class="figure-topline">
+              <span>FIG. 01</span>
+              <span>ORTHOGONAL STRIP PARTITION</span>
+            </div>
+            <svg viewBox="0 0 640 500" role="img" aria-labelledby="hero-svg-title hero-svg-desc">
+              <title id="hero-svg-title">A polygon partitioned by parallel vertical cuts</title>
+              <desc id="hero-svg-desc">
+                A non-convex polygon is divided into colored vertical strips of bounded horizontal width.
+              </desc>
+              <defs>
+                <clipPath id="hero-polygon-clip">
+                  <path d="M72 102 184 56 252 116 345 68 432 124 552 86 570 205 505 253 577 387 458 445 354 400 251 458 171 404 76 438 42 294 101 224Z"></path>
+                </clipPath>
+                <marker id="arrow-navy" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+                  <path d="M0 0 6 3 0 6" fill="none" stroke="currentColor" stroke-width="1.1"></path>
+                </marker>
+                <marker id="arrow-ochre" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto-start-reverse" markerUnits="strokeWidth">
+                  <path d="M0 0 6 3 0 6" fill="none" stroke="currentColor" stroke-width="1.1"></path>
+                </marker>
+              </defs>
+
+              <g class="plot-grid" aria-hidden="true">
+                <path d="M40 72H590M40 136H590M40 200H590M40 264H590M40 328H590M40 392H590M40 456H590"></path>
+                <path d="M72 42V466M136 42V466M200 42V466M264 42V466M328 42V466M392 42V466M456 42V466M520 42V466"></path>
+              </g>
+
+              <g clip-path="url(#hero-polygon-clip)" class="partition-pieces">
+                <rect class="piece piece-a" x="28" y="35" width="112" height="440"></rect>
+                <rect class="piece piece-b" x="140" y="35" width="112" height="440"></rect>
+                <rect class="piece piece-c" x="252" y="35" width="112" height="440"></rect>
+                <rect class="piece piece-d" x="364" y="35" width="112" height="440"></rect>
+                <rect class="piece piece-e" x="476" y="35" width="112" height="440"></rect>
+                <path class="cut cut-a" d="M140 32V475"></path>
+                <path class="cut cut-b" d="M252 32V475"></path>
+                <path class="cut cut-focus" d="M364 32V475"></path>
+                <path class="cut cut-d" d="M476 32V475"></path>
+              </g>
+
+              <path class="polygon-outline" d="M72 102 184 56 252 116 345 68 432 124 552 86 570 205 505 253 577 387 458 445 354 400 251 458 171 404 76 438 42 294 101 224Z"></path>
+
+              <g class="vertices" aria-hidden="true">
+                <circle cx="72" cy="102" r="3"></circle><circle cx="184" cy="56" r="3"></circle>
+                <circle cx="252" cy="116" r="3"></circle><circle cx="345" cy="68" r="3"></circle>
+                <circle cx="432" cy="124" r="3"></circle><circle cx="552" cy="86" r="3"></circle>
+                <circle cx="570" cy="205" r="3"></circle><circle cx="505" cy="253" r="3"></circle>
+                <circle cx="577" cy="387" r="3"></circle><circle cx="458" cy="445" r="3"></circle>
+                <circle cx="354" cy="400" r="3"></circle><circle cx="251" cy="458" r="3"></circle>
+                <circle cx="171" cy="404" r="3"></circle><circle cx="76" cy="438" r="3"></circle>
+                <circle cx="42" cy="294" r="3"></circle><circle cx="101" cy="224" r="3"></circle>
+              </g>
+
+              <g class="dimension">
+                <path d="M146 34H246" marker-start="url(#arrow-ochre)" marker-end="url(#arrow-ochre)"></path>
+                <path d="M140 41V25M252 41V25"></path>
+                <text x="196" y="22" text-anchor="middle">&omega;<tspan baseline-shift="sub">u</tspan> &le; 1</text>
+              </g>
+
+              <g class="axes">
+                <path d="M505 454h72" marker-end="url(#arrow-navy)"></path>
+                <path d="M505 454v-66" marker-end="url(#arrow-navy)"></path>
+                <text x="584" y="459">u</text>
+                <text x="499" y="383">v</text>
+              </g>
+
+              <g class="annotations">
+                <text x="376" y="187">c</text>
+                <text x="70" y="282">P</text>
+                <text x="96" y="390">S<tspan baseline-shift="sub">1</tspan></text>
+                <text x="188" y="390">S<tspan baseline-shift="sub">2</tspan></text>
+                <text x="298" y="390">S<tspan baseline-shift="sub">3</tspan></text>
+                <text x="410" y="390">S<tspan baseline-shift="sub">4</tspan></text>
+                <text x="520" y="370">S<tspan baseline-shift="sub">5</tspan></text>
+              </g>
+            </svg>
+            <figcaption id="hero-figure-caption">
+              <span>P</span> &middot; cuts parallel to <i>v</i> &middot;
+              <span>&omega;<sub>u</sub>(S<sub>i</sub>) &le; 1</span>
+            </figcaption>
           </figure>
         </div>
       </section>
 
-      <section id="research" class="section" aria-labelledby="research-title">
+      <section id="research" class="section research-section" aria-labelledby="research-title">
         <div class="wrap">
-          <h2 id="research-title">Research</h2>
+          <header class="section-heading">
+            <p class="section-index">01 / Research</p>
+            <h2 id="research-title">Research areas</h2>
+            <p>
+              Geometric and combinatorial structure, with emphasis on efficient algorithms
+              and provable guarantees.
+            </p>
+          </header>
 
-          <div class="research-grid">
-            <div>
-              <ul class="interests">
-                <li>
-                  <b>Computational geometry.</b> Partitioning and covering polygons;
-                  containment and approximation of shapes; geometric lower bounds.
-                </li>
-                <li>
-                  <b>Algorithmic primitives for AI.</b> Nearest-neighbour search,
-                  weighted selection in sorted lists, geometric optimal transport.
-                </li>
-                <li>
-                  <b>Learning-augmented algorithms.</b> Online scheduling with
-                  predictions; neural combinatorial optimisation.
-                </li>
-              </ul>
+          <div class="research-cards">
+            <article class="research-card card-teal">
+              <div class="mini-figure" aria-hidden="true">
+                <svg viewBox="0 0 210 130">
+                  <defs>
+                    <clipPath id="partition-card-clip">
+                      <path d="M18 42 61 19 94 36 128 18 189 43 178 83 194 111 128 116 96 99 55 119 22 94 35 68Z"></path>
+                    </clipPath>
+                  </defs>
+                  <g clip-path="url(#partition-card-clip)">
+                    <rect class="mini-fill-a" x="10" y="10" width="48" height="115"></rect>
+                    <rect class="mini-fill-b" x="58" y="10" width="48" height="115"></rect>
+                    <rect class="mini-fill-c" x="106" y="10" width="48" height="115"></rect>
+                    <rect class="mini-fill-d" x="154" y="10" width="48" height="115"></rect>
+                    <path class="mini-cuts" d="M58 8v116M106 8v116M154 8v116"></path>
+                  </g>
+                  <path class="mini-outline" d="M18 42 61 19 94 36 128 18 189 43 178 83 194 111 128 116 96 99 55 119 22 94 35 68Z"></path>
+                </svg>
+              </div>
+              <p class="card-number">A</p>
+              <h3>Polygon partitioning</h3>
+              <p>Width constraints, directional cuts, optimal strip partitions, and lower bounds.</p>
+              <p class="keywords">partition &middot; width &middot; lattice</p>
+            </article>
 
-              <p class="current-line">
-                <span class="lead-in">Currently</span> working on dynamic
-                <i>k</i>-nearest-neighbour search in high-dimensional non-Euclidean
-                metrics.
-              </p>
-            </div>
+            <article class="research-card card-ochre">
+              <div class="mini-figure" aria-hidden="true">
+                <svg viewBox="0 0 210 130">
+                  <path class="convex-fill" d="M25 87 42 37 88 14 153 27 191 63 176 108 111 121 58 112Z"></path>
+                  <g transform="rotate(-7 108 69)">
+                    <path class="histogon-fill" d="M50 57h24V42h24V33h24v11h24v19h24v33h-24v11h-24v8H98v-10H74V89H50Z"></path>
+                    <path class="histogon-grid" d="M74 42v63M98 33v82M122 33v82M146 44v63"></path>
+                  </g>
+                  <path class="convex-outline" d="M25 87 42 37 88 14 153 27 191 63 176 108 111 121 58 112Z"></path>
+                  <path class="angle-mark" d="M35 105a25 25 0 0 1 22-20"></path>
+                  <text class="theta-label" x="49" y="105">&theta;</text>
+                </svg>
+              </div>
+              <p class="card-number">B</p>
+              <h3>Shape approximation</h3>
+              <p>Inscribed and circumscribed histogons, unit rectangles, and convex containment.</p>
+              <p class="keywords">histogon &middot; contact &middot; approximation</p>
+            </article>
 
-            <figure class="plate">
-              <svg class="plate-art" viewBox="0 0 300 240" role="img" aria-labelledby="fig-knn">
-                <title id="fig-knn">
-                  A query point and the smallest L1 ball containing its five nearest neighbours
-                </title>
-                <path class="ball" d="M150 30L242 122L150 214L58 122Z"></path>
-                <g class="site">
-                  <circle cx="162" cy="40" r="3.4"></circle><circle cx="96" cy="78" r="3.4"></circle>
-                  <circle cx="140" cy="210" r="3.4"></circle><circle cx="176" cy="196" r="3.4"></circle>
-                  <circle cx="232" cy="148" r="3.4"></circle><circle cx="62" cy="152" r="3.4"></circle>
-                  <circle cx="214" cy="58" r="3.4"></circle><circle cx="24" cy="116" r="3.4"></circle>
-                  <circle cx="268" cy="104" r="3.4"></circle><circle cx="252" cy="190" r="3.4"></circle>
-                  <circle cx="38" cy="46" r="3.4"></circle><circle cx="44" cy="208" r="3.4"></circle>
-                  <circle cx="278" cy="32" r="3.4"></circle>
-                </g>
-                <g class="site near">
-                  <circle cx="108" cy="118" r="4"></circle><circle cx="186" cy="148" r="4"></circle>
-                  <circle cx="206" cy="96" r="4"></circle><circle cx="120" cy="176" r="4"></circle>
-                  <circle cx="76" cy="104" r="4"></circle>
-                </g>
-                <path class="query" d="M143 122h14M150 115v14"></path>
-                <text class="fig-label" x="156" y="112">q</text>
-              </svg>
-              <figcaption>
-                The smallest &#8467;<sub>1</sub>-ball at a query <i>q</i> holding its
-                <i>k</i> = 5 nearest neighbours.
-              </figcaption>
-            </figure>
+            <article class="research-card card-blue">
+              <div class="mini-figure" aria-hidden="true">
+                <svg viewBox="0 0 210 130">
+                  <path class="nn-ball" d="M105 13 170 65 105 117 40 65Z"></path>
+                  <g class="nn-sites">
+                    <circle cx="41" cy="29" r="3"></circle><circle cx="25" cy="89" r="3"></circle>
+                    <circle cx="75" cy="104" r="3"></circle><circle cx="173" cy="29" r="3"></circle>
+                    <circle cx="185" cy="93" r="3"></circle><circle cx="145" cy="109" r="3"></circle>
+                  </g>
+                  <g class="nn-near">
+                    <circle cx="76" cy="59" r="4"></circle><circle cx="124" cy="42" r="4"></circle>
+                    <circle cx="139" cy="75" r="4"></circle><circle cx="88" cy="89" r="4"></circle>
+                  </g>
+                  <path class="nn-query" d="M99 68h12M105 62v12"></path>
+                  <text class="q-label" x="113" y="61">q</text>
+                </svg>
+              </div>
+              <p class="card-number">C</p>
+              <h3>Geometric primitives for AI</h3>
+              <p>Nearest-neighbour data structures, geometric optimal transport, and prediction-assisted algorithms.</p>
+              <p class="keywords">proximity &middot; selection &middot; learning</p>
+            </article>
           </div>
         </div>
       </section>
 
-      <section id="publications" class="section" aria-labelledby="publications-title">
+      <section id="work" class="section work-section" aria-labelledby="work-title">
         <div class="wrap">
-          <h2 id="publications-title">Publications</h2>
-          <p class="note">
-            Reverse chronological. Full list on
-            <a href="https://dblp.org/pid/245/8388.html" target="_blank" rel="noreferrer">dblp<span class="ext" aria-hidden="true">↗</span></a>
-            and in the
-            <a href="cv_15.pdf" target="_blank" rel="noreferrer">CV<span class="ext" aria-hidden="true">↗</span></a>.
-          </p>
+          <header class="section-heading">
+            <p class="section-index">02 / Selected work</p>
+            <h2 id="work-title">Research threads</h2>
+            <p>Three geometric structures recur across the papers.</p>
+          </header>
 
-          <h3 class="subhead">Journal articles</h3>
-          <ol class="pubs">
-            <li class="pub">
-              <p class="rail pub-year">2026</p>
-              <div class="pub-main">
-                <h4>Minimum Partition of Polygons under Width and Cut Constraints</h4>
-                <p class="authors">
-                  <b>Jaehoon Chung</b>, Kazuo Iwama, Chung-Shou Liao, and Hee-Kap Ahn
+          <div class="work-list">
+            <article class="work-item">
+              <figure class="work-figure work-figure-partition" aria-labelledby="partition-caption">
+                <div class="figure-topline">
+                  <span>02.a</span>
+                  <span>WIDTH + CUT CONSTRAINTS</span>
+                </div>
+                <svg viewBox="0 0 520 310" role="img" aria-labelledby="partition-title">
+                  <title id="partition-title">A convex polygon partitioned by equally spaced parallel cuts</title>
+                  <defs>
+                    <clipPath id="convex-partition-clip">
+                      <path d="M50 208 83 72 202 28 380 54 478 138 432 262 250 288 112 272Z"></path>
+                    </clipPath>
+                  </defs>
+                  <g class="work-grid" aria-hidden="true">
+                    <path d="M32 54H490M32 112H490M32 170H490M32 228H490M32 286H490"></path>
+                    <path d="M62 30V290M124 30V290M186 30V290M248 30V290M310 30V290M372 30V290M434 30V290"></path>
+                  </g>
+                  <g clip-path="url(#convex-partition-clip)">
+                    <rect class="partition-fill-1" x="38" y="20" width="94" height="280"></rect>
+                    <rect class="partition-fill-2" x="132" y="20" width="94" height="280"></rect>
+                    <rect class="partition-fill-3" x="226" y="20" width="94" height="280"></rect>
+                    <rect class="partition-fill-4" x="320" y="20" width="94" height="280"></rect>
+                    <rect class="partition-fill-5" x="414" y="20" width="94" height="280"></rect>
+                    <path class="parallel-cuts" d="M132 18v284M226 18v284M320 18v284M414 18v284"></path>
+                  </g>
+                  <path class="work-polygon-outline" d="M50 208 83 72 202 28 380 54 478 138 432 262 250 288 112 272Z"></path>
+                  <g class="measure-line">
+                    <path d="M137 18h84"></path><path d="M132 25V11M226 25V11"></path>
+                    <text x="179" y="9" text-anchor="middle">1</text>
+                  </g>
+                  <g class="direction-labels">
+                    <path d="M445 283h43"></path><path d="M445 283v-39"></path>
+                    <text x="494" y="288">u</text><text x="440" y="239">v</text>
+                  </g>
+                </svg>
+                <figcaption id="partition-caption">Equally spaced parallel cuts; each piece has bounded directional width.</figcaption>
+              </figure>
+              <div class="work-copy">
+                <p class="work-number">Thread 01</p>
+                <h3>Width-constrained polygon partitioning</h3>
+                <p>
+                  Minimum partitions under prescribed width and cut directions, followed by
+                  input-sensitive algorithms and matching lower bounds for orthogonal strip partitions.
                 </p>
-                <p class="venue">
-                  <span><cite>Discrete &amp; Computational Geometry</cite>, accepted</span>
-                  <a
-                    class="src"
-                    href="https://drops.dagstuhl.de/storage/00lipics/lipics-vol359-isaac2025/LIPIcs.ISAAC.2025.22/LIPIcs.ISAAC.2025.22.pdf"
-                    target="_blank"
-                    rel="noreferrer"
-                  >ISAAC&nbsp;2025 version<span class="ext" aria-hidden="true">↗</span></a>
-                </p>
+                <ul class="result-list">
+                  <li>parallel-cut structure for convex polygons</li>
+                  <li>lattice-theoretic dynamic programming</li>
+                  <li>convex, simple, and self-overlapping polygons</li>
+                </ul>
+                <div class="paper-links">
+                  <a class="external" href="https://arxiv.org/abs/2604.15247" target="_blank" rel="noreferrer">SWAT 2026</a>
+                  <a class="external" href="https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.ISAAC.2025.22" target="_blank" rel="noreferrer">ISAAC 2025</a>
+                </div>
               </div>
-            </li>
+            </article>
 
-            <li class="pub">
-              <p class="rail pub-year">2026</p>
-              <div class="pub-main">
-                <h4>Inscribed and Circumscribed Histogons of a Convex Polygon</h4>
-                <p class="authors">
-                  <b>Jaehoon Chung</b>, Sang Won Bae, Chan-Su Shin, Sang Duk Yoon, and Hee-Kap Ahn
+            <article class="work-item work-item-reverse">
+              <figure class="work-figure work-figure-histogon" aria-labelledby="histogon-caption">
+                <div class="figure-topline">
+                  <span>02.b</span>
+                  <span>INSCRIBE / CIRCUMSCRIBE</span>
+                </div>
+                <svg viewBox="0 0 520 310" role="img" aria-labelledby="histogon-title">
+                  <title id="histogon-title">A rotated histogon inscribed in a convex polygon</title>
+                  <g class="work-grid" aria-hidden="true">
+                    <path d="M32 54H490M32 112H490M32 170H490M32 228H490M32 286H490"></path>
+                    <path d="M62 30V290M124 30V290M186 30V290M248 30V290M310 30V290M372 30V290M434 30V290"></path>
+                  </g>
+                  <path class="histogon-outer" d="M53 213 74 79 168 29 337 33 455 91 484 196 403 272 231 292 99 268Z"></path>
+                  <g transform="rotate(-8 260 163)">
+                    <path class="histogon-solution" d="M92 136h52V95h52V69h52v14h52v34h52v85h-52v25h-52v18h-52v-20h-52v-37H92Z"></path>
+                    <path class="histogon-unit-lines" d="M144 95v130M196 69v176M248 69v176M300 83v144"></path>
+                    <g class="contact-points">
+                      <circle cx="92" cy="136" r="5"></circle><circle cx="196" cy="69" r="5"></circle>
+                      <circle cx="352" cy="117" r="5"></circle><circle cx="300" cy="227" r="5"></circle>
+                    </g>
+                  </g>
+                  <g class="theta-annotation">
+                    <path d="M63 263a45 45 0 0 1 39-35"></path>
+                    <text x="88" y="260">&theta;</text>
+                  </g>
+                  <text class="shape-label" x="433" y="82">P</text>
+                  <text class="shape-label solution-label" x="257" y="155">H</text>
+                </svg>
+                <figcaption id="histogon-caption">A rotated <i>k</i>-histogon inside a convex polygon; coral points mark contacts.</figcaption>
+              </figure>
+              <div class="work-copy">
+                <p class="work-number">Thread 02</p>
+                <h3>Convex polygons and histogons</h3>
+                <p>
+                  Algorithms for approximating a convex polygon by a connected union of
+                  equal-width rectangles, under inscribed and circumscribed containment.
                 </p>
-                <p class="venue">
-                  <span><cite>Computational Geometry: Theory and Applications</cite></span>
-                  <a
-                    class="src"
-                    href="https://www.sciencedirect.com/science/article/abs/pii/S0925772125000707"
-                    target="_blank"
-                    rel="noreferrer"
-                  >Article<span class="ext" aria-hidden="true">↗</span></a>
-                </p>
+                <ul class="result-list">
+                  <li>axis-aligned and arbitrary orientations</li>
+                  <li>unit, <i>k</i>-histogon, and free-width variants</li>
+                  <li>contact-event characterization</li>
+                </ul>
+                <div class="paper-links">
+                  <a class="external" href="https://doi.org/10.1016/j.comgeo.2025.102232" target="_blank" rel="noreferrer">Computational Geometry 2026</a>
+                  <a class="external" href="https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.FSTTCS.2022.13" target="_blank" rel="noreferrer">FSTTCS 2022</a>
+                </div>
               </div>
-            </li>
+            </article>
 
-            <li class="pub">
-              <p class="rail pub-year">2025</p>
-              <div class="pub-main">
-                <h4>Largest Unit Rectangles Inscribed in a Convex Polygon</h4>
-                <p class="authors">
-                  <b>Jaehoon Chung</b>, Sang Won Bae, Chan-Su Shin, Sang Duk Yoon, and Hee-Kap Ahn
+            <article class="work-item">
+              <figure class="work-figure work-figure-rectangle" aria-labelledby="rectangle-caption">
+                <div class="figure-topline">
+                  <span>02.c</span>
+                  <span>UNIT RECTANGLE</span>
+                </div>
+                <svg viewBox="0 0 520 310" role="img" aria-labelledby="rectangle-title">
+                  <title id="rectangle-title">A largest rotated unit rectangle inscribed in a convex polygon</title>
+                  <g class="work-grid" aria-hidden="true">
+                    <path d="M32 54H490M32 112H490M32 170H490M32 228H490M32 286H490"></path>
+                    <path d="M62 30V290M124 30V290M186 30V290M248 30V290M310 30V290M372 30V290M434 30V290"></path>
+                  </g>
+                  <path class="rectangle-polygon" d="M45 198 82 82 177 31 341 44 464 106 482 202 390 274 225 290 96 264Z"></path>
+                  <g transform="rotate(-15 264 164)">
+                    <rect class="unit-rectangle" x="143" y="105" width="242" height="118"></rect>
+                    <path class="height-bracket" d="M143 89h242M143 96V81M385 96V81"></path>
+                    <text class="height-label" x="264" y="77" text-anchor="middle">h</text>
+                    <path class="unit-bracket" d="M402 105v118M394 105h16M394 223h16"></path>
+                    <text class="unit-label" x="416" y="168">1</text>
+                    <g class="contact-points">
+                      <circle cx="143" cy="105" r="5"></circle><circle cx="385" cy="105" r="5"></circle>
+                      <circle cx="385" cy="223" r="5"></circle><circle cx="143" cy="223" r="5"></circle>
+                    </g>
+                  </g>
+                  <g class="theta-annotation">
+                    <path d="M72 256a42 42 0 0 1 37-34"></path>
+                    <text x="95" y="253">&theta;</text>
+                  </g>
+                </svg>
+                <figcaption id="rectangle-caption">One side is fixed at unit length; the area is maximized over position and orientation.</figcaption>
+              </figure>
+              <div class="work-copy">
+                <p class="work-number">Thread 03</p>
+                <h3>Largest inscribed unit rectangles</h3>
+                <p>
+                  Computing a maximum-area rectangle with one prescribed side length inside
+                  a convex polygon, using geometric contacts and orientation events.
                 </p>
-                <p class="venue">
-                  <span><cite>Computational Geometry: Theory and Applications</cite></span>
-                  <a
-                    class="src"
-                    href="https://www.sciencedirect.com/science/article/pii/S0925772124000579"
-                    target="_blank"
-                    rel="noreferrer"
-                  >Article<span class="ext" aria-hidden="true">↗</span></a>
-                </p>
+                <ul class="result-list">
+                  <li>variable height and orientation</li>
+                  <li>boundary-contact configurations</li>
+                  <li>exact geometric optimization</li>
+                </ul>
+                <div class="paper-links">
+                  <a class="external" href="https://doi.org/10.1016/j.comgeo.2024.102135" target="_blank" rel="noreferrer">Computational Geometry 2025</a>
+                </div>
               </div>
-            </li>
-
-            <li class="pub">
-              <p class="rail pub-year">2024</p>
-              <div class="pub-main">
-                <h4>Nearest Neighbor Search Algorithm in Dynamic Environment</h4>
-                <p class="authors">
-                  Hee-Kap Ahn, <b>Jaehoon Chung</b>, and Mook Kwon Jung
-                </p>
-                <p class="venue">
-                  <span><cite>Journal of KIISE</cite> 42(2)</span>
-                  <a
-                    class="src"
-                    href="https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11710370"
-                    target="_blank"
-                    rel="noreferrer"
-                  >Article<span class="ext" aria-hidden="true">↗</span></a>
-                </p>
-              </div>
-            </li>
-          </ol>
-
-          <h3 class="subhead">Conference papers</h3>
-          <ol class="pubs">
-            <li class="pub">
-              <p class="rail pub-year">2026</p>
-              <div class="pub-main">
-                <h4>Orthogonal Strip Partitioning of Polygons: Lattice-Theoretic Algorithms and Lower Bounds</h4>
-                <p class="authors"><b>Jaehoon Chung</b></p>
-                <p class="venue">
-                  <span><cite>SWAT 2026</cite></span>
-                  <a
-                    class="src"
-                    href="https://arxiv.org/abs/2604.15247"
-                    target="_blank"
-                    rel="noreferrer"
-                  >arXiv<span class="ext" aria-hidden="true">↗</span></a>
-                </p>
-              </div>
-            </li>
-
-            <li class="pub">
-              <p class="rail pub-year">2022</p>
-              <div class="pub-main">
-                <h4>Approximating Convex Polygons by Histogons</h4>
-                <p class="authors">
-                  <b>Jaehoon Chung</b>, Sang Won Bae, Chan-Su Shin, Sang Duk Yoon, and Hee-Kap Ahn
-                </p>
-                <p class="venue">
-                  <span><cite>CCCG 2022</cite></span>
-                  <a
-                    class="src"
-                    href="https://www.torontomu.ca/content/dam/canadian-conference-computational-geometry-2022/CCCG_proceedings_2022.pdf"
-                    target="_blank"
-                    rel="noreferrer"
-                  >PDF<span class="ext" aria-hidden="true">↗</span></a>
-                </p>
-              </div>
-            </li>
-          </ol>
+            </article>
+          </div>
         </div>
       </section>
 
-      <section id="talks" class="section" aria-labelledby="talks-title">
+      <section id="publications" class="section publications-section" aria-labelledby="publications-title">
         <div class="wrap">
-          <h2 id="talks-title">Talks</h2>
+          <header class="section-heading publications-heading">
+            <div>
+              <p class="section-index">03 / Publications</p>
+              <h2 id="publications-title">Selected publications</h2>
+            </div>
+            <p>
+              Complete records:
+              <a class="external" href="https://dblp.org/pid/245/8388.html" target="_blank" rel="noreferrer">DBLP</a>
+              and <a class="external" href="cv_15.pdf" target="_blank" rel="noreferrer">CV</a>.
+            </p>
+          </header>
 
-          <ol class="entries">
-            <li class="entry">
-              <p class="rail entry-date">
-                <time datetime="2026-08-19">Aug 2026</time>
-              </p>
-              <div class="entry-main">
-                <h4>Orthogonal Strip Partitioning of Simple Polygons: A Lattice-Theoretic Algorithm</h4>
-                <p>
-                  <span>WAAC 2026, Pusan National University</span>
-                  <a
-                    class="src"
-                    href="https://algo.postech.ac.kr/workshops/waac26/"
-                    target="_blank"
-                    rel="noreferrer"
-                  >Event<span class="ext" aria-hidden="true">↗</span></a>
-                </p>
+          <ol class="publication-list">
+            <li class="publication">
+              <p class="pub-year">2026</p>
+              <div class="pub-body">
+                <h3>Orthogonal Strip Partitioning of Polygons: Lattice-Theoretic Algorithms and Lower Bounds</h3>
+                <p class="authors"><strong>Jaehoon Chung</strong></p>
+                <p class="venue"><cite>SWAT 2026</cite></p>
               </div>
+              <a class="paper-link external" href="https://arxiv.org/abs/2604.15247" target="_blank" rel="noreferrer">arXiv</a>
             </li>
-            <li class="entry">
-              <p class="rail entry-date"><time datetime="2026-07-22">Jul 2026</time></p>
-              <div class="entry-main">
-                <h4>Mathematical Structures in Width-Constrained Polygon Containment and Partitioning</h4>
-                <p>Invited talk, DGIST TCS Seminar</p>
+
+            <li class="publication">
+              <p class="pub-year">2026</p>
+              <div class="pub-body">
+                <h3>Minimum Partition of Polygons under Width and Cut Constraints</h3>
+                <p class="authors"><strong>Jaehoon Chung</strong>, Kazuo Iwama, Chung-Shou Liao, and Hee-Kap Ahn</p>
+                <p class="venue"><cite>Discrete &amp; Computational Geometry</cite>, accepted &middot; ISAAC 2025</p>
               </div>
+              <a class="paper-link external" href="https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.ISAAC.2025.22" target="_blank" rel="noreferrer">paper</a>
             </li>
-            <li class="entry">
-              <p class="rail entry-date"><time datetime="2026-06-26">Jun 2026</time></p>
-              <div class="entry-main">
-                <h4>Nearest-Neighbor Search for Scientific Computing</h4>
-                <p>
-                  <span>Invited lecture, 17th KIAS CAC Summer School</span>
-                  <a
-                    class="src"
-                    href="https://cac.kias.re.kr/2026"
-                    target="_blank"
-                    rel="noreferrer"
-                  >Event<span class="ext" aria-hidden="true">↗</span></a>
-                </p>
+
+            <li class="publication">
+              <p class="pub-year">2026</p>
+              <div class="pub-body">
+                <h3>Inscribed and Circumscribed Histogons of a Convex Polygon</h3>
+                <p class="authors"><strong>Jaehoon Chung</strong>, Sang Won Bae, Chan-Su Shin, Sang Duk Yoon, and Hee-Kap Ahn</p>
+                <p class="venue"><cite>Computational Geometry: Theory and Applications</cite> &middot; FSTTCS 2022</p>
               </div>
+              <a class="paper-link external" href="https://doi.org/10.1016/j.comgeo.2025.102232" target="_blank" rel="noreferrer">article</a>
+            </li>
+
+            <li class="publication">
+              <p class="pub-year">2025</p>
+              <div class="pub-body">
+                <h3>Largest Unit Rectangles Inscribed in a Convex Polygon</h3>
+                <p class="authors"><strong>Jaehoon Chung</strong>, Sang Won Bae, Chan-Su Shin, Sang Duk Yoon, and Hee-Kap Ahn</p>
+                <p class="venue"><cite>Computational Geometry: Theory and Applications</cite></p>
+              </div>
+              <a class="paper-link external" href="https://doi.org/10.1016/j.comgeo.2024.102135" target="_blank" rel="noreferrer">article</a>
+            </li>
+
+            <li class="publication">
+              <p class="pub-year">2024</p>
+              <div class="pub-body">
+                <h3>Nearest Neighbor Search Algorithm in Dynamic Environment</h3>
+                <p class="authors">Hee-Kap Ahn, <strong>Jaehoon Chung</strong>, and Mook Kwon Jung</p>
+                <p class="venue"><cite>Journal of KIISE</cite> 42(2)</p>
+              </div>
+              <a class="paper-link external" href="https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11710370" target="_blank" rel="noreferrer">article</a>
+            </li>
+
+            <li class="publication">
+              <p class="pub-year">2022</p>
+              <div class="pub-body">
+                <h3>Approximating Convex Polygons by Histogons</h3>
+                <p class="authors"><strong>Jaehoon Chung</strong>, Sang Won Bae, Chan-Su Shin, Sang Duk Yoon, and Hee-Kap Ahn</p>
+                <p class="venue"><cite>CCCG 2022</cite></p>
+              </div>
+              <a class="paper-link external" href="https://www.torontomu.ca/content/dam/canadian-conference-computational-geometry-2022/papers/CCCG2022_paper_34.pdf" target="_blank" rel="noreferrer">PDF</a>
             </li>
           </ol>
         </div>
@@ -336,11 +511,14 @@
 
     <footer class="site-footer">
       <div class="wrap footer-inner">
-        <p>
-          Center for AI and Natural Sciences, Korea Institute for Advanced Study, Seoul ·
+        <div>
+          <p class="footer-name">Jaehoon Chung</p>
+          <p>Center for AI and Natural Sciences &middot; Korea Institute for Advanced Study &middot; Seoul</p>
+        </div>
+        <div class="footer-right">
           <a href="mailto:sk7755@kias.re.kr">sk7755@kias.re.kr</a>
-        </p>
-        <p class="footer-meta">Last updated <time datetime="2026-08">August 2026</time></p>
+          <p>Updated August 2026</p>
+        </div>
       </div>
     </footer>
 
