@@ -15,8 +15,9 @@ python -m http.server 8000
 ## 페이지 구성
 
 - 소개: 현재 직위, 연구 분야, 연락처, 큰 프로필 사진
-- 연구 분야: polygon partitioning, geometric approximation, geometric data structures
-- Selected papers: 원 논문의 Figure를 사용한 대표 논문 3편
+- 연구 분야: computational geometry, algorithmic primitives for AI, AI-assisted algorithm design
+- Upcoming: 향후 발표 일정과 행사 링크
+- Selected papers: Largest Unit Rectangles를 첫 번째로 배치한 대표·최근 논문 4편
 - Selected publications: 연구 흐름을 보여 주는 논문 6편
 - 전체 경력과 출판 목록: `cv_15.pdf`
 
@@ -24,8 +25,9 @@ python -m http.server 8000
 
 ## 디자인
 
-SWAT 2026, ISAAC 2025, FSTTCS 2022 논문의 Figure를 원본 비율로 사용합니다. 임의로 재구성한 연구 도식은 넣지 않았습니다.
+Computational Geometry 2025, SWAT 2026, ISAAC 2025, FSTTCS 2022 논문의 Figure를 원본 비율로 사용합니다. 임의로 재구성한 연구 도식은 넣지 않았습니다.
 
+- 서로 다른 방향의 largest unit rectangles
 - vertical trapezoidal decomposition과 strip partition
 - windmill polygon의 guillotine / non-guillotine partition
 - inscribed / circumscribed histogon의 다섯 변형
@@ -58,6 +60,7 @@ SWAT 2026, ISAAC 2025, FSTTCS 2022 논문의 Figure를 원본 비율로 사용�
 
 - 논문 정보와 링크: `index.html`의 `#publications`
 - 대표 논문과 Figure: `index.html`의 `#work`, `assets/papers/`
+- 향후 일정: `index.html`의 `#upcoming`
 - 색상과 크기: `styles.css` 상단의 `:root`
 - 프로필 사진 크롭: `styles.css`의 `.hero-photo img`
 - CV 교체: 새 PDF를 `cv_15.pdf`라는 이름으로 덮어쓰기

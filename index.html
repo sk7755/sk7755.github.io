@@ -52,6 +52,7 @@
 
         <nav id="primary-navigation" class="nav" aria-label="Primary" data-navigation>
           <a href="#research">Research</a>
+          <a href="#upcoming">Upcoming</a>
           <a href="#work">Selected papers</a>
           <a href="#publications">Publications</a>
           <a class="nav-cv external" href="cv_15.pdf" target="_blank" rel="noreferrer">CV</a>
@@ -63,7 +64,7 @@
       <section id="top" class="hero" aria-labelledby="name">
         <div class="wrap hero-grid">
           <div class="hero-copy">
-            <p class="eyebrow">Computational geometry &middot; theoretical computer science</p>
+            <p class="eyebrow">Computational geometry &middot; data structures &middot; algorithms for AI</p>
             <h1 id="name">Jaehoon <span>Chung</span></h1>
             <div class="appointment">
               <p class="appointment-copy">
@@ -86,8 +87,8 @@
               </a>
             </div>
             <p class="summary">
-              I study polygon partitioning, geometric containment and approximation,
-              and data structures for algorithmic problems in AI.
+              I work on computational geometry, data structures, and AI-assisted algorithm
+              design, with a current focus on high-dimensional proximity search.
             </p>
 
             <div class="identity-links" aria-label="Profile links">
@@ -114,41 +115,108 @@
           <header class="section-heading">
             <p class="section-index">01 / Research</p>
             <h2 id="research-title">Research areas</h2>
-            <p>Algorithms for polygonal structure, containment, approximation, and proximity.</p>
+            <p>Geometric and combinatorial algorithms with provable guarantees.</p>
           </header>
 
           <div class="research-cards">
             <article class="research-card card-teal">
               <p class="card-number">01</p>
-              <h3>Polygon partitioning</h3>
-              <p>Width constraints, directional cuts, orthogonal strip partitions, and lower bounds.</p>
-            </article>
-
-            <article class="research-card card-ochre">
-              <p class="card-number">02</p>
-              <h3>Geometric approximation</h3>
-              <p>Inscribed and circumscribed histogons, unit rectangles, and convex containment.</p>
+              <h3>Computational geometry</h3>
+              <p>Polygon partitioning, covering, containment, and approximation; lower bounds in geometric optimization.</p>
             </article>
 
             <article class="research-card card-blue">
+              <p class="card-number">02</p>
+              <h3>Algorithmic primitives for AI</h3>
+              <p>Distribution-aware nearest-neighbor search, weighted selection, and geometric optimal transport.</p>
+            </article>
+
+            <article class="research-card card-ochre">
               <p class="card-number">03</p>
-              <h3>Geometric data structures</h3>
-              <p>Dynamic nearest-neighbor search and related geometric algorithms.</p>
+              <h3>AI-assisted algorithm design</h3>
+              <p>Learning-augmented online scheduling and neural combinatorial optimization with theoretical guarantees.</p>
             </article>
           </div>
+        </div>
+      </section>
+
+      <section
+        id="upcoming"
+        class="section upcoming-section"
+        aria-labelledby="upcoming-title"
+      >
+        <div class="wrap">
+          <article class="upcoming-card">
+            <div class="upcoming-date">
+              <p class="section-index">02 / Upcoming</p>
+              <time datetime="2026-08-19">19&ndash;20 August 2026</time>
+            </div>
+            <div class="upcoming-copy">
+              <p class="event-type">Oral presentation &middot; WAAC 2026</p>
+              <h2 id="upcoming-title">Orthogonal Strip Partitioning of Simple Polygons: A Lattice-Theoretic Algorithm</h2>
+              <p>26th Korea&ndash;Japan Joint Workshop on Algorithms and Computation &middot; Pusan National University, Busan</p>
+            </div>
+            <a
+              class="upcoming-link external"
+              href="https://algo.postech.ac.kr/workshops/waac26/"
+              target="_blank"
+              rel="noreferrer"
+            >Event page</a>
+          </article>
         </div>
       </section>
 
       <section id="work" class="section papers-section" aria-labelledby="work-title">
         <div class="wrap">
           <header class="section-heading">
-            <p class="section-index">02 / Papers</p>
+            <p class="section-index">03 / Papers</p>
             <h2 id="work-title">Selected papers</h2>
-            <p>The figures below are reproduced directly from the papers.</p>
+            <p>Figures are reproduced from the papers.</p>
           </header>
 
           <div class="featured-papers">
-            <article class="featured-paper" aria-labelledby="swat-title">
+            <article class="featured-paper representative-paper" aria-labelledby="unit-rectangle-title">
+              <figure class="paper-figure paper-figure-blue paper-figure-wide">
+                <div class="figure-topline">
+                  <span>Figure 1</span>
+                  <span>Computational Geometry 2025</span>
+                </div>
+                <a
+                  class="figure-link"
+                  href="https://doi.org/10.1016/j.comgeo.2024.102135"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Open the Largest Unit Rectangles paper"
+                >
+                  <img
+                    src="assets/papers/unit-rectangle-2025-fig1.jpg"
+                    width="2822"
+                    height="562"
+                    loading="lazy"
+                    decoding="async"
+                    alt="Unit rectangles with five orientations inscribed in the same convex polygon"
+                  >
+                </a>
+                <figcaption>
+                  <span>Unit rectangles in a convex polygon over different orientations.</span>
+                  <a class="external" href="https://doi.org/10.1016/j.comgeo.2024.102135" target="_blank" rel="noreferrer">Source</a>
+                </figcaption>
+              </figure>
+              <div class="paper-copy">
+                <p class="paper-venue">Representative paper &middot; Computational Geometry 2025</p>
+                <h3 id="unit-rectangle-title">Largest Unit Rectangles Inscribed in a Convex Polygon</h3>
+                <p class="authors"><strong>Jaehoon Chung</strong>, Sang Won Bae, Chan-Su Shin, Sang Duk Yoon, and Hee-Kap Ahn</p>
+                <p class="paper-summary">
+                  Algorithms for a maximum-area unit-width rectangle over all orientations
+                  inside a convex polygon, including an output-sensitive method.
+                </p>
+                <div class="paper-links">
+                  <a class="external" href="https://doi.org/10.1016/j.comgeo.2024.102135" target="_blank" rel="noreferrer">Article</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="featured-paper featured-paper-reverse" aria-labelledby="swat-title">
               <figure class="paper-figure paper-figure-teal">
                 <div class="figure-topline">
                   <span>Figure 2</span>
@@ -190,7 +258,7 @@
               </div>
             </article>
 
-            <article class="featured-paper featured-paper-reverse" aria-labelledby="isaac-title">
+            <article class="featured-paper" aria-labelledby="isaac-title">
               <figure class="paper-figure paper-figure-coral">
                 <div class="figure-topline">
                   <span>Figure 1</span>
@@ -231,7 +299,7 @@
               </div>
             </article>
 
-            <article class="featured-paper" aria-labelledby="fsttcs-title">
+            <article class="featured-paper featured-paper-reverse" aria-labelledby="fsttcs-title">
               <figure class="paper-figure paper-figure-ochre">
                 <div class="figure-topline">
                   <span>Figure 1</span>
@@ -280,7 +348,7 @@
         <div class="wrap">
           <header class="section-heading publications-heading">
             <div>
-              <p class="section-index">03 / Publications</p>
+              <p class="section-index">04 / Publications</p>
               <h2 id="publications-title">Selected publications</h2>
             </div>
             <p>
