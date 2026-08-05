@@ -614,7 +614,13 @@ const initRectFigure = () => {
   };
 
   canvas.addEventListener('pointermove', scrubTo);
-  canvas.addEventListener('pointerdown', scrubTo);
+  // Only jump on press for a mouse. On touch, a press that turns out to be a
+  // vertical scroll would otherwise yank the orientation before the browser
+  // claims the gesture; waiting for pointermove means only a horizontal drag,
+  // which the browser hands to us, ever moves it.
+  canvas.addEventListener('pointerdown', (event) => {
+    if (event.pointerType === 'mouse') scrubTo(event);
+  });
   canvas.addEventListener('pointerleave', releaseScrub);
   canvas.addEventListener('pointercancel', releaseScrub);
   canvas.addEventListener('pointerup', (event) => {

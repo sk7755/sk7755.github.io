@@ -278,6 +278,42 @@ cite {
 .js .publication:nth-child(5) { transition-delay: 200ms; }
 .js .publication:nth-child(6) { transition-delay: 250ms; }
 
+/* Touch targets. The small mono links render around 19px tall, which is under
+   the 24px minimum, so on coarse pointers an invisible overlay grows the hit
+   area without moving anything on screen. */
+@media (pointer: coarse) {
+  .wordmark,
+  .identity-links a,
+  .paper-link,
+  .footer-right a,
+  .section-heading a,
+  .paper-figure figcaption a {
+    position: relative;
+  }
+
+  .wordmark::before,
+  .identity-links a::before,
+  .paper-link::before,
+  .footer-right a::before,
+  .section-heading a::before,
+  .paper-figure figcaption a::before {
+    position: absolute;
+    inset: -11px -7px;
+    content: "";
+  }
+
+  /* Keeps the caption link one unbroken box, so the overlay covers all of it
+     instead of straddling two wrapped fragments */
+  .paper-figure figcaption a {
+    display: inline-block;
+  }
+
+  .menu-toggle {
+    width: 44px;
+    height: 44px;
+  }
+}
+
 .external::after {
   margin-left: 0.28em;
   content: "\2197";
@@ -1238,9 +1274,10 @@ cite {
     background-size: 48px 48px;
   }
 
+  /* In one column the wash runs a hard diagonal across the summary text
+     instead of sitting behind the photo, so drop it */
   body::after {
-    width: 84vw;
-    height: 650px;
+    display: none;
   }
 
   .wordmark {
@@ -1251,8 +1288,13 @@ cite {
     display: block;
   }
 
+  /* Roomy enough that the expanded hit areas above never touch */
   .identity-links {
-    gap: 0.55rem 0.9rem;
+    gap: 0.9rem 1.15rem;
+  }
+
+  .hero-grid {
+    gap: 2.75rem;
   }
 
   .kias-logo {
@@ -1264,8 +1306,11 @@ cite {
     width: min(100%, 330px);
   }
 
+  /* 0.58rem rendered at 9.3px — too small to read. The tighter gap keeps both
+     labels on one line down to 320px at this size. */
   .figure-topline {
-    font-size: 0.58rem;
+    gap: 0.5rem;
+    font-size: 0.62rem;
   }
 
   .section-heading {
